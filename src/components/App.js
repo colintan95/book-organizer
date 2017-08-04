@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Sidebar from './Sidebar';
-import Tileboard from './Tileboard';
+import TileArea from './TileArea';
 
 const App = () => (
   <div style={appStyle}>
     <Sidebar/>
-    <Tileboard/>
+    <TileArea/>
   </div>
 );
 

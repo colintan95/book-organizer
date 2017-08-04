@@ -8,7 +8,7 @@ const Tile = () => (
 
 const tileStyle = {
   float: 'left',
-  margin: '20px',
+  margin: '0px 20px 40px',
   backgroundColor: 'grey',
   width: '200px',
   height: '200px',

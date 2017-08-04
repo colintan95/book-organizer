@@ -1,21 +1,15 @@
 import React from 'react';
 
-import Tile from './Tile'
+import Tile from './Tile';
 
-const Tileboard = () => (
+const Tileboard = ({ tiles, category }) => (
   <div style={tileboardStyle}>
-    <Tile/>
-    <Tile/>
-    <Tile/>
-    <Tile/>
   </div>
 );
 
 const tileboardStyle = {
-  marginLeft: '300px',
-  padding: '30px',
-  width: 'auto',
-  height: '100%'
+  margin: '0px',
+  padding: '15px 30px',
 };
 
 export default Tileboard;
