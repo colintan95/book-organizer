@@ -1,7 +1,6 @@
 const { Map, List } = require('immutable');
 
 const tiles = (state = Map(), action) => {
-  console.log(state);
   switch(action.type) {
     case 'ADD_TILE':
       return state.update(action.category, (arr = List()) => arr.push(Map({

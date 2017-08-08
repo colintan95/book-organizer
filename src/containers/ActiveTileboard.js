@@ -13,16 +13,17 @@ const getActiveTiles = (tiles, activeCat) => {
     return List(res);
   }
   else if (tiles.has(activeCat)) {
-    return tiles.get(activeCat);
+    return tiles.get(activeCat).toJS();
   }
   else {
     // Active category does not exist
-    return List();
+    return [];
   }
 };
 
 const mapStateToProps = state => {
   return {
+    // IMPT!: tiles is a JS array, NOT immutable
     tiles: getActiveTiles(state.tiles, state.activeCat)
   };
 };
