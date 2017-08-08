@@ -1,9 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-let TileAdd = ({ dispatch }) => (
-  <div style={tileAddStyle}>
+import { addTile } from '../actions';
 
+let TileAdd = ({ dispatch }) => (
+  <div style={tileAddStyle}
+    onClick = {e => {
+      e.preventDefault();
+
+      dispatch(addTile({
+        'title': 'Superforecasting',
+        'authors': ['Peter Tetlock'],
+        'category': 'Economics'
+      }));
+    }}
+  >
   </div>
 );
 

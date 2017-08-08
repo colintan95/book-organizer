@@ -1,9 +1,11 @@
-import { combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 
 import tiles from './tiles';
+import activeCat from './activeCat';
 
 const bookInfoApp = combineReducers({
-  tiles
+  tiles,
+  activeCat
 });
 
 export default bookInfoApp;

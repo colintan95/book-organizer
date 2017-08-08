@@ -2,8 +2,11 @@ import React from 'react';
 
 import Tile from './Tile';
 
-const Tileboard = ({ tiles, category }) => (
+const Tileboard = ({ tiles }) => (
   <div style={tileboardStyle}>
+    {tiles.map(tile => (
+      <Tile title={tile.title} />
+    ))}
   </div>
 );
 

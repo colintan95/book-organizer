@@ -4,17 +4,7 @@ import { connect } from 'react-redux';
 import { addTile } from '../actions';
 
 let SidebarAdd = ({ dispatch }) => (
-  <div style={sidebarAddStyle}
-    onClick = {e => {
-      e.preventDefault();
-
-      dispatch(addTile({
-        'title': 'Superforecasting',
-        'authors': ['Peter Tetlock'],
-        'category': 'economics'
-      }));
-    }}
-  >
+  <div style={sidebarAddStyle}>
   </div>
 );
 

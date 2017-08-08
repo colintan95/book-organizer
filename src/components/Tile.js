@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Tile = () => (
+const Tile = ({ title }) => (
   <div style={tileStyle}>
-
+    {title}
   </div>
 );
 
