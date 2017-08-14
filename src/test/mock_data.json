@@ -1,0 +1,32 @@
+{
+  "economics": [
+    {
+      "title": "Superforecasting",
+      "authors": ["Philip E. Tetlock", "Dan Gardner"]
+    },
+    {
+      "title": "Nudge",
+      "authors": ["Richard H. Thaler", "Cass R. Sunstein"]
+    }
+  ],
+  "statistics": [
+    {
+      "title": "The Seven Pillars of Statistical Wisdom",
+      "authors": ["Stephen M. Stigler"]
+    }
+  ],
+  "biographies": [
+    {
+      "title": "Team of Rivals",
+      "authors": ["Doris Kearns Goodwin"]
+    },
+    {
+      "title": "The Information: A History, A Theory, A Flood",
+      "authors": ["James Gleick"]
+    },
+    {
+      "title": "The Smartest Guys in the Room",
+      "authors": ["Bethany McLean", "Peter Elkind"]
+    }
+  ]
+}

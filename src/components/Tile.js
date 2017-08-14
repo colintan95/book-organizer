@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Tile = ({ title, authors }) => (
+const Tile = ({ tile }) => (
   <div style={tileStyle}>
     <div style={tileInfoStyle}>
-      <div style={tileTitleStyle}>{title}</div>
-      <div style={tileAuthorsStyle}>{authors.join()}</div>
+      <div style={tileTitleStyle}>{tile.title}</div>
+      <div style={tileAuthorsStyle}>{tile.authors.join(', ')}</div>
     </div>
   </div>
 );
@@ -34,11 +34,14 @@ const tileTitleStyle = {
 };
 
 const tileAuthorsStyle = {
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
   fontSize: '11pt',
   margin: '0px',
   padding: '0px',
-  width: '100%',
-  height: '15px'
+  width: '90%',
+  height: '20px',
 };
 
 export default Tile;
