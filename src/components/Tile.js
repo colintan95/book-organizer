@@ -26,22 +26,27 @@ const tileInfoStyle = {
 };
 
 const tileTitleStyle = {
-  fontSize: '12pt',
-  margin: '0px',
-  padding: '0px',
-  width: '100%',
-  height: '45px'
-};
-
-const tileAuthorsStyle = {
   whiteSpace: 'nowrap',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   fontSize: '11pt',
   margin: '0px',
   padding: '0px',
+  width: '100%',
+  height: '45px',
+  maxHeight: '45px'
+};
+
+const tileAuthorsStyle = {
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  fontSize: '10pt',
+  margin: '0px',
+  padding: '0px',
   width: '90%',
   height: '20px',
+  maxHeight: '20px'
 };
 
 export default Tile;
