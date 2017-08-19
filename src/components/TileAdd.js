@@ -3,27 +3,42 @@ import { connect } from 'react-redux';
 
 import { addTile } from '../actions';
 
-let TileAdd = ({ dispatch }) => (
-  <div style={tileAddStyle}
+let TileAddView = ({ onClick }) => (
+  <div style={buttonStyle}
     onClick = {e => {
       e.preventDefault();
 
+      onClick();
+    }}>
+  </div>
+);
+
+const buttonStyle = {
+  backgroundColor: 'grey',
+  width: '30px',
+  height: '30px',
+};
+
+const mapStateToProps = state => {
+  return {};
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onClick: () => {
       dispatch(addTile({
         'title': 'Superforecasting',
         'authors': ['Peter Tetlock'],
         'category': 'Economics'
-      }));
-    }}
-  >
-  </div>
-);
+      }))
+    }
+  }
+};
 
-TileAdd = connect()(TileAdd);
+const TileAdd = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TileAddView);
 
-const tileAddStyle = {
-  backgroundColor: 'grey',
-  width: '30px',
-  height: '30px',
-}
 
 export default TileAdd;

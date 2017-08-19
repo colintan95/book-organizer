@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Tilebar from './Tilebar';
-import ActiveTileboard from '../containers/ActiveTileboard';
+import Tileboard from './Tileboard';
 
 const TileArea = () => (
   <div style={tileAreaStyle}>
     <Tilebar/>
-    <ActiveTileboard/>
+    <Tileboard/>
   </div>
 );
 

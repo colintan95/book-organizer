@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TileAdd from './TileAdd';
+import TileAdd from './TileAdd'
 
 const Tilebar = () => (
   <div style={tilebarStyle}>

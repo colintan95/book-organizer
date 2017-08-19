@@ -11,3 +11,30 @@ body {
   height: 100%;
   margin: 0px;
 }
+
+.tiles-enter {
+  opacity: 0.01;
+}
+
+.tiles-enter.tiles-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.tileWindow-enter {
+  opacity: 0.01;
+}
+
+.tileWindow-enter.tileWindow-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.tileWindow-leave {
+  opacity: 1;
+}
+
+.tileWindow-leave.tileWindow-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}

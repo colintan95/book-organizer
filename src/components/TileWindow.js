@@ -1,7 +1,9 @@
 import React from 'react';
 
+import TileWindowClose from './TileWindowClose';
+
 const TileWindow = ({ tile }) => (
-  <div style={tileWindowStyle}>
+  <div>
     <div style={backgroundStyle}>
     </div>
     <div style={infoWindowStyle}>
@@ -18,14 +20,10 @@ const TileWindow = ({ tile }) => (
           The Enron scandal brought down one of the most admired companies of the 1990s. Countless books and articles were written about it, but only The Smartest Guys in the Room holds up a decade later as the definitive narrative. For this tenth anniversary edition, McLean and Elkind have revisited the fall of Enron and its aftermath, in a new chapter that asks why Enron still matters. They also reveal the fates of the key players in the scandal.
         </div>
       </div>
-      <div style={closeBtnStyle}></div>
+      <TileWindowClose/>
     </div>
   </div>
 );
-
-const tileWindowStyle = {
-  visibility: 'hidden'
-};
 
 // Translucent background
 const backgroundStyle = {
@@ -91,15 +89,6 @@ const mainDescStyle = {
   borderTop: '1px black solid',
   paddingTop: '10px',
   maxHeight: '180px'
-};
-
-const closeBtnStyle = {
-  backgroundColor: 'yellow',
-  position: 'absolute',
-  top: '5px',
-  left: '585px',
-  width: '20px',
-  height: '20px'
 };
 
 export default TileWindow;
