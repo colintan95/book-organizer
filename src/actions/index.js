@@ -1,18 +1,20 @@
-export const addTile = info => {
-  return {
-    type: 'ADD_TILE',
+export const addTile = info => ({
+  type: 'ADD_TILE',
     ...info
-  }
-};
+});
 
-export const openTileWindow = tile => {
-  return {
-    type: 'OPEN_TILEWINDOW'
-  }
-};
+export const openInfoWindow = tile => ({
+  type: 'OPEN_INFOWINDOW'
+});
 
-export const closeTileWindow = () => {
-  return {
-    type: 'CLOSE_TILEWINDOW'
-  }
-};
+export const closeInfoWindow = () => ({
+  type: 'CLOSE_INFOWINDOW'
+});
+
+export const openAddWindow = () => ({
+  type: 'OPEN_ADDWINDOW'
+});
+
+export const closeAddWindow = () => ({
+  type: 'CLOSE_ADDWINDOW'
+});

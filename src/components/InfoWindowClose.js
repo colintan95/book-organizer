@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { closeTileWindow } from '../actions';
+import { closeInfoWindow } from '../actions';
 
-const TileWindowCloseView = ({ onClick }) => (
-  <div style={buttonStyle}
-    onClick={e => {
-      e.preventDefault();
-      onClick();
-    }}>
+const InfoWindowCloseView = ({ onClick }) => (
+  <div>
+    <button style={buttonStyle}
+      onClick={e => {
+        e.preventDefault();
+        onClick();
+    }}/>
   </div>
 );
 
@@ -26,13 +27,13 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onClick: () => {
-    dispatch(closeTileWindow());
+    dispatch(closeInfoWindow());
   }
 });
 
-const TileWindowClose = connect(
+const InfoWindowClose = connect(
   mapStateToProps,
   mapDispatchToProps
-)(TileWindowCloseView);
+)(InfoWindowCloseView);
 
-export default TileWindowClose;
+export default InfoWindowClose;

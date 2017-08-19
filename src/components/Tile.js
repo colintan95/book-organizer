@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import TileView from './views/TileView';
-import { openTileWindow } from '../actions';
+import { openInfoWindow } from '../actions';
 
 const mapStateToProps = (state, props) => {
   return {
@@ -12,7 +12,7 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = (dispatch, props) => {
   return {
     onClick: () => {
-      dispatch(openTileWindow(props.tile));
+      dispatch(openInfoWindow(props.tile));
     }
   };
 };

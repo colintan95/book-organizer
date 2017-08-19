@@ -2,7 +2,6 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Tile from '../Tile';
-import TileWindow from '../TileWindow';
 
 const TileboardView = ({ tiles, tileWindowActive }) => (
   <div>
@@ -15,14 +14,6 @@ const TileboardView = ({ tiles, tileWindowActive }) => (
       ))}
     </ReactCSSTransitionGroup>
     </div>
-    <ReactCSSTransitionGroup
-      transitionName="tileWindow"
-      transitionEnterTimeout={500}
-      transitionLeaveTimeout={500}>
-      {tileWindowActive === true &&
-        <TileWindow/>
-      }
-    </ReactCSSTransitionGroup>
   </div>
 );
 

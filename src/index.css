@@ -21,20 +21,48 @@ body {
   transition: opacity 500ms ease-in;
 }
 
-.tileWindow-enter {
+
+/*
+  InfoWindow Animation
+*/
+
+.infoWindow-enter {
   opacity: 0.01;
 }
 
-.tileWindow-enter.tileWindow-enter-active {
+.infoWindow-enter.infoWindow-enter-active {
   opacity: 1;
   transition: opacity 500ms ease-in;
 }
 
-.tileWindow-leave {
+.infoWindow-leave {
   opacity: 1;
 }
 
-.tileWindow-leave.tileWindow-leave-active {
+.infoWindow-leave.infoWindow-leave-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}
+
+
+/*
+  AddWindow Animation
+*/
+
+.addWindow-enter {
+  opacity: 0.01;
+}
+
+.addWindow-enter.addWindow-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.addWindow-leave {
+  opacity: 1;
+}
+
+.addWindow-leave.addWindow-leave-active {
   opacity: 0.01;
   transition: opacity 500ms ease-in;
 }

@@ -2,12 +2,14 @@ import { combineReducers } from 'redux';
 
 import tiles from './tiles';
 import activeCat from './activeCat';
-import tileWindowActive from './tileWindowActive'
+import infoWindowActive from './infoWindowActive';
+import addWindowActive from './addWindowActive';
 
 const bookInfoApp = combineReducers({
   tiles,
   activeCat,
-  tileWindowActive
+  infoWindowActive,
+  addWindowActive
 });
 
 export default bookInfoApp;
