@@ -22,7 +22,7 @@ const TileArea = ({ infoWindowActive, addWindowActive }) => (
       transitionName="addWindow"
       transitionEnterTimeout={500}
       transitionLeaveTimeout={500}>
-      {infoWindowActive === true &&
+      {addWindowActive === true &&
         <AddWindow/>
       }
     </ReactCSSTransitionGroup>
