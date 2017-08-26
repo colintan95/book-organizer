@@ -5,12 +5,12 @@ import { openAddWindow } from '../actions';
 
 const TilebarView = ({ onButtonClick }) => (
   <div style={tilebarStyle}>
-    <input style={searchBoxStyle} type="test" name="bookSearch"/>
+    <input style={searchBoxStyle} type="test" id="tilebarSearchbox"/>
     <button style={searchButtonStyle}
-      onClick={e => {
-        e.preventDefault();
-        onButtonClick();
-      }}/>
+        onClick={e => {
+          e.preventDefault();
+          onButtonClick(document.getElementById());
+        }}/>
   </div>
 );
 
@@ -40,8 +40,8 @@ const searchButtonStyle = {
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
-  onButtonClick: () => {
-    dispatch(openAddWindow());
+  onButtonClick: (searchValue = "") => {
+    dispatch(openAddWindow(searchValue));
   }
 });
 

@@ -1,18 +1,33 @@
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 
 import bookInfoApp from './reducers';
 import App from './components/App';
 import './index.css'
 import { addTile } from './actions';
 
+// DEBUGGING
+import { fetchSearchResults } from './actions';
+import { openAddWindow } from './actions';
+// DEBUGGING
+
+//const express = require('express');
 const { Map, List } = require('immutable');
 
 const data = require('./test/mock_data.json');
 
-let store = createStore(bookInfoApp);
+const loggerMiddleware = createLogger();
+
+let store = createStore(
+  bookInfoApp,
+  applyMiddleware(
+    thunkMiddleware
+  )
+);
 
 // Replace this with actual loaded data
 for (const cat in data) {
@@ -24,6 +39,11 @@ for (const cat in data) {
     }));
   }
 }
+
+// DEBUGGING
+store.dispatch(fetchSearchResults('Superforecasting'));
+store.dispatch(openAddWindow());
+// DEBUGGING
 
 render(
   <Provider store={store}>

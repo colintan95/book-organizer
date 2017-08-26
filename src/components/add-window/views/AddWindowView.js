@@ -1,11 +1,15 @@
 import React from 'react';
 
+import Searchbar from '../Searchbar';
+import ResultsList from '../ResultsList';
 import CloseButton from '../CloseButton';
 
 const AddWindowView = ({}) => (
   <div>
     <div style={backgroundStyle}></div>
     <div style={windowStyle}>
+      <Searchbar/>
+      <ResultsList/>
       <CloseButton/>
     </div>
   </div>
@@ -34,15 +38,6 @@ const windowStyle = {
   left: '50%',
   width: '560px',
   height: '360px'
-};
-
-const buttonStyle = {
-  backgroundColor: 'yellow',
-  position: 'absolute',
-  top: '5px',
-  left: '585px',
-  width: '20px',
-  height: '20px'
 };
 
 export default AddWindowView;
