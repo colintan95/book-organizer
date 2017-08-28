@@ -41,8 +41,14 @@ for (const cat in data) {
 }
 
 // DEBUGGING
+//fetch('/users?q=Superforecasting').then(res => res.json())
+//  .then(data => console.log(data));
+//fetch('/users?id=23995360').then(res => res.json())
+//.then(data => console.log(data));
 store.dispatch(fetchSearchResults('Superforecasting'));
 store.dispatch(openAddWindow());
+
+
 // DEBUGGING
 
 render(

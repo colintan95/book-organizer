@@ -5,8 +5,8 @@ const SearchbarView = () => (
   <div>
     <div style={searchDivStyle}>
       <div style={searchTextStyle}>SEARCH:</div>
-      <input style={searchBoxStyle} type="test" id="tilebarSearchbox"/>
-      <button style={searchButtonStyle}/>
+        <input style={searchBoxStyle} type="test" id="tilebarSearchbox"/>
+        <button style={searchButtonStyle}/>
     </div>
   </div>
 );

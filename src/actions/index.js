@@ -1,4 +1,6 @@
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
+
+const { fromJS } = require('immutable');
 
 export const addTile = info => ({
   type: 'ADD_TILE',
@@ -15,9 +17,11 @@ export const requestSearch = (searchValue) => ({
   searchValue
 });
 
-export const receiveSearch = (searchValue) => ({
+export const receiveSearch = (searchValue, results, failed = false) => ({
   type: 'RECEIVE_SEARCH',
   searchValue,
+  results,
+  failed,
   receivedAt: Date.now()
 });
 
@@ -41,15 +45,18 @@ export function fetchSearchResults(searchValue) {
   return function(dispatch) {
     dispatch(requestSearch(searchValue));
 
-    return fetch('https://www.goodreads.com/search.xml' +
-        '?key=Gj0MEsrnsUooEP9LzKrMw&q=' + searchValue,
-        { method: 'GET', headers: new Headers(), mode: 'cors' })
+    return fetch('/users' + '?q=' + searchValue)
       .then(
         response => response.json(),
-        error => console.log('An error occured.', error)
+        error => {
+          console.log('An error occured.', error);
+          dispatch(receiveSearch(searchValue, {}, true));
+        }
       )
-      .then(json =>
-        dispatch(receiveSearch(searchValue))
-      )
+      .then(json => {
+        dispatch(receiveSearch(searchValue,
+          fromJS(json),
+          false));
+      })
   };
 }
