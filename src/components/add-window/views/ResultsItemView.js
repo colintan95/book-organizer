@@ -2,7 +2,7 @@ import React from 'react';
 
 const ResultsItemView = ({ bookInfo, onClick }) => (
   <div style={itemDivStyle}>
-    <img style={imgStyle} src={bookInfo.imageUrl}/>
+    <img style={imgStyle} src={bookInfo.imageUrl} alt=''/>
     <div style={infoDivStyle}>
       <div style={titleStyle}>
         {bookInfo.title}

@@ -2,7 +2,7 @@ import React from 'react';
 
 import InfoWindowClose from './InfoWindowClose';
 
-const InfoWindow = ({ tile }) => (
+const InfoWindow = ({ title, authors, description }) => (
   <div>
     <div style={backgroundStyle}></div>
     <div style={windowStyle}>
@@ -11,12 +11,15 @@ const InfoWindow = ({ tile }) => (
       </div>
       <div style={mainInfoStyle}>
         <div style={mainOutlineStyle}>
-          <div style={mainTitleStyle}>The Smartest Guys in the Room</div>
-          <div style={mainAuthorsStyle}>Bethany Mclean, Peter Elkind</div>
+          <div style={mainTitleStyle}>
+            {title}
+          </div>
+          <div style={mainAuthorsStyle}>
+            {authors === true && authors.join(', ')}
+          </div>
         </div>
         <div style={mainDescStyle}>
-          The Enron scandal brought down one of the most admired companies of the 1990s. Countless books and articles were written about it, but only The Smartest Guys in the Room holds up a decade later as the definitive narrative. For this tenth anniversary edition, McLean and Elkind have revisited the fall of Enron and its aftermath, in a new chapter that asks why Enron still matters. They also reveal the fates of the key players in the scandal.
-          The Enron scandal brought down one of the most admired companies of the 1990s. Countless books and articles were written about it, but only The Smartest Guys in the Room holds up a decade later as the definitive narrative. For this tenth anniversary edition, McLean and Elkind have revisited the fall of Enron and its aftermath, in a new chapter that asks why Enron still matters. They also reveal the fates of the key players in the scandal.
+          {description}
         </div>
       </div>
       <InfoWindowClose/>

@@ -1,8 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addTile } from '../actions';
-
 let SidebarAdd = ({ dispatch }) => (
   <div style={sidebarAddStyle}>
   </div>

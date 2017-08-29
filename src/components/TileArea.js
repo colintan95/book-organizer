@@ -1,10 +1,9 @@
-import React from 'react';
 import { connect } from 'react-redux';
 
 import TileAreaView from './views/TileAreaView';
 
 const mapStateToProps = state => ({
-  infoWindowActive: state.infoWindowActive,
+  infoWindowActive: state.infoWindow.get('isActive'),
   addWindowActive: state.addWindowActive
 });
 

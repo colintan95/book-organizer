@@ -1,12 +1,14 @@
+import { updateInfoWindow } from '../actions';
+
 const { Map } = require('immutable');
 
-const searchResults = (state = Map({ isFetching: false,
+const bookInfoReq = (state = Map({ isFetching: false,
     isValid: false }),
     action) => {
   switch (action.type) {
-    case 'REQUEST_SEARCH':
+    case 'REQUEST_BOOKINFO':
       return Map({ isFetching: true, isValid: false });
-    case 'RECEIVE_SEARCH':
+    case 'RECEIVE_BOOKINFO':
       return state.mergeWith((oldVal, newVal) => newVal,
         {
           results: action.results,
@@ -19,4 +21,4 @@ const searchResults = (state = Map({ isFetching: false,
   }
 };
 
-export default searchResults;
+export default bookInfoReq;

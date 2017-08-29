@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import TileboardView from './views/TileboardView';
 
-const { Map, List } = require('immutable');
+const { List } = require('immutable');
 
 const getActiveTiles = (tiles, activeCat) => {
   if (activeCat === "") {

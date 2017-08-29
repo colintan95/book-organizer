@@ -4,12 +4,14 @@ import Searchbar from '../Searchbar';
 import ResultsList from '../ResultsList';
 import CloseButton from '../CloseButton';
 
-const AddWindowView = ({}) => (
+const AddWindowView = () => (
   <div>
     <div style={backgroundStyle}></div>
     <div style={windowStyle}>
-      <Searchbar/>
-      <ResultsList/>
+      <div>
+        <Searchbar/>
+        <ResultsList/>
+      </div>
       <CloseButton/>
     </div>
   </div>
