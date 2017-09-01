@@ -4,10 +4,10 @@ const { fromJS } = require('immutable');
 
 export const addTile = info => ({
   type: 'ADD_TILE',
-    ...info
+  ...info
 });
 
-export const openInfoWindow = tile => ({
+export const openInfoWindow = () => ({
   type: 'OPEN_INFOWINDOW'
 });
 
@@ -17,10 +17,10 @@ export const closeInfoWindow = () => ({
 
 export const updateInfoWindow = bookInfo => ({
   type: 'UPDATE_INFOWINDOW',
-  bookInfo
+  ...bookInfo
 })
 
-export const openAddWindow = (searchValue = "") => ({
+export const openAddWindow = () => ({
   type: 'OPEN_ADDWINDOW'
 });
 
@@ -59,6 +59,7 @@ export function fetchSearchResults(searchValue) {
         }
       )
       .then(json => {
+        console.log(json);
         dispatch(receiveSearch(searchValue,
           fromJS(json),
           false));
@@ -79,7 +80,7 @@ export const receiveBookInfo = (id, results, failed = false) => ({
   receivedAt: Date.now()
 });
 
-export function fetchBookInfo(id) {
+export function fetchBookInfo(id, add=false) {
   return function(dispatch) {
     dispatch(requestBookInfo(id));
 
@@ -92,9 +93,20 @@ export function fetchBookInfo(id) {
         }
       )
       .then(json => {
+        if (add) {
+          dispatch(addTile({
+            id: id,
+            title: json.title,
+            authors: json.authors,
+            isbn: json.isbn,
+            description: json.description,
+            imageUrl: json.imageUrl,
+            category: 'nocat',
+          }));
+        }
         dispatch(receiveBookInfo(id,
           fromJS(json),
           false));
-      })
+      });
   };
 }

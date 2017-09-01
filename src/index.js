@@ -28,6 +28,7 @@ let store = createStore(
 );
 
 // Replace this with actual loaded data
+/*
 for (const cat in data) {
   for (const elt in data[cat]) {
     store.dispatch(addTile({
@@ -37,15 +38,17 @@ for (const cat in data) {
     }));
   }
 }
+*/
 
 // DEBUGGING
 //fetch('/users?q=Superforecasting').then(res => res.json())
 //  .then(data => console.log(data));
 //fetch('/users?id=23995360').then(res => res.json())
 //.then(data => console.log(data));
-store.dispatch(fetchSearchResults('Superforecasting'));
+//store.dispatch(fetchSearchResults('Superforecasting'));
 //store.dispatch(openAddWindow());
-store.dispatch(fetchBookInfo('23995360'));
+//store.dispatch(fetchBookInfo('23995360'));
+store.dispatch(fetchBookInfo('23995360',true));
 
 
 // DEBUGGING

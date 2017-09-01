@@ -8,7 +8,7 @@ const { List } = require('immutable');
 const ResultsListView = ({ results }) => (
   <div style={listDivStyle}>
     {results.map(result => (
-      <ResultsItem bookInfo={result.toObject()}/>
+      <ResultsItem bookInfo={result.toJS()}/>
     ))}
   </div>
 );

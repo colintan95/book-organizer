@@ -3,10 +3,11 @@ const { Map, List } = require('immutable');
 const infoWindow = (state = Map({ isActive: false }), action) => {
   switch(action.type) {
     case 'UPDATE_INFOWINDOW':
-      return state.mergeWith((oldVal, newVal) => oldVal, {
+      return state.mergeWith((oldVal, newVal) => newVal, {
         title: action.title,
         authors: List(action.authors),
-        description: action.description
+        description: action.description,
+        imageUrl: action.imageUrl
       });
     case 'OPEN_INFOWINDOW':
       return state.set('isActive', true);

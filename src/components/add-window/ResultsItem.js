@@ -1,13 +1,16 @@
 import { connect } from 'react-redux';
 
 import ResultsItemView from './views/ResultsItemView';
+import { fetchBookInfo } from '../../actions';
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = state => ({
 
 });
 
-const mapDispatchToProps = (dispatch, props) => ({
-
+const mapDispatchToProps = dispatch => ({
+  onClick: id => {
+    dispatch(fetchBookInfo(id, true));
+  }
 });
 
 const ResultsItem = connect(

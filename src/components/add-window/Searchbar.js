@@ -1,12 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const SearchbarView = () => (
+import { fetchSearchResults } from '../../actions';
+
+const SearchbarView = ({ onSearch }) => (
   <div>
     <div style={searchDivStyle}>
       <div style={searchTextStyle}>SEARCH:</div>
-        <input style={searchBoxStyle} type="test" id="tilebarSearchbox"/>
-        <button style={searchButtonStyle}/>
+        <input style={searchBoxStyle} type="text" id="addWindowSearchbox"
+          onKeyDown={e => {
+            if (e.keyCode === 13) {
+              onSearch(document.getElementById('addWindowSearchbox')
+                .value);
+            }
+          }}/>
+        <button style={searchButtonStyle}
+          onClick={e => {
+            e.preventDefault();
+            onSearch(document.getElementById('addWindowSearchbox')
+              .value)
+          }}/>
     </div>
   </div>
 );
@@ -43,7 +56,11 @@ const searchButtonStyle = {
 
 const mapStateToProps = state => ({});
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  onSearch: searchVal => {
+    dispatch(fetchSearchResults(searchVal));
+  }
+});
 
 const Searchbar = connect(
   mapStateToProps,

@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 
 import TileView from './views/TileView';
-import { openInfoWindow } from '../actions';
+import { updateInfoWindow, openInfoWindow } from '../actions';
+
+const { toJS } = require('immutable');
 
 const mapStateToProps = (state, props) => {
   return {
@@ -12,7 +14,13 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = (dispatch, props) => {
   return {
     onClick: () => {
-      dispatch(openInfoWindow(props.tile));
+      dispatch(updateInfoWindow({
+        title: props.tile.title,
+        authors: props.tile.authors,
+        description: props.tile.description,
+        imageUrl: props.tile.imageUrl
+      }));
+      dispatch(openInfoWindow());
     }
   };
 };

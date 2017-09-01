@@ -10,7 +10,11 @@ const ResultsItemView = ({ bookInfo, onClick }) => (
       <div style={authorStyle}>
         {bookInfo.author}
       </div>
-      <button style={addButtonStyle}/>
+      <button style={addButtonStyle}
+        onClick={e => {
+          e.preventDefault();
+          onClick(bookInfo.id);
+        }}/>
     </div>
   </div>
 );

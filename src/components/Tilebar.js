@@ -1,16 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { openAddWindow } from '../actions';
+import { openAddWindow, fetchSearchResults } from '../actions';
 
-const TilebarView = ({ onButtonClick }) => (
+const TilebarView = ({ onSearch }) => (
   <div style={tilebarStyle}>
-    <input style={searchBoxStyle} type="test" id="tilebarSearchbox"/>
+    <input style={searchBoxStyle} type="test" id="tilebarSearchbox"
+      onKeyDown={e => {
+        if (e.keyCode === 13) {
+          onSearch(document.getElementById('tilebarSearchbox').value);
+        }
+      }}/>
     <button style={searchButtonStyle}
-        onClick={e => {
-          e.preventDefault();
-          onButtonClick(document.getElementById());
-        }}/>
+      onClick={e => {
+        e.preventDefault();
+        onSearch(document.getElementById('tilebarSearchbox').value);
+      }}/>
   </div>
 );
 
@@ -40,8 +45,9 @@ const searchButtonStyle = {
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
-  onButtonClick: (searchValue = "") => {
-    dispatch(openAddWindow(searchValue));
+  onSearch: searchValue => {
+    dispatch(openAddWindow());
+    dispatch(fetchSearchResults(searchValue));
   }
 });
 
